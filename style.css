@@ -1,0 +1,117 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: "SF Mono", "Fira Code", monospace;
+  background: #0e0e12;
+  color: #d4d4d8;
+  padding: 1.5rem;
+  min-height: 100vh;
+}
+
+header { margin-bottom: 1rem; }
+h1 { font-size: 1.4rem; color: #e4e4e7; }
+.subtitle { font-size: 0.8rem; color: #71717a; margin-top: 0.25rem; }
+
+/* --- controls --- */
+#controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+#controls button {
+  background: #27272a;
+  color: #e4e4e7;
+  border: 1px solid #3f3f46;
+  padding: 0.35rem 0.9rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.8rem;
+}
+#controls button:hover { background: #3f3f46; }
+#controls label {
+  font-size: 0.75rem;
+  color: #a1a1aa;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+#controls input[type="number"] {
+  width: 3.5rem;
+  background: #18181b;
+  color: #e4e4e7;
+  border: 1px solid #3f3f46;
+  border-radius: 3px;
+  padding: 0.2rem 0.4rem;
+  font-family: inherit;
+  font-size: 0.8rem;
+}
+#controls input[type="range"] { width: 6rem; }
+
+/* --- arena --- */
+#arena {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 320px;
+  padding: 1rem 0.5rem 0.5rem;
+  background: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.bar {
+  flex: 1;
+  border-radius: 3px 3px 0 0;
+  position: relative;
+  transition: height 0.15s ease, background 0.15s ease;
+  min-width: 4px;
+}
+.bar .label {
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.55rem;
+  color: #71717a;
+  white-space: nowrap;
+}
+
+/* agent states */
+.bar.idle        { background: #6366f1; }
+.bar.moving      { background: #22d3ee; }
+.bar.jammed      { background: #f43f5e; }
+.bar.rerouting   { background: #f59e0b; }
+.bar.satisfied   { background: #10b981; }
+
+/* --- stats --- */
+#stats {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.78rem;
+}
+.stat span { color: #a78bfa; }
+
+/* --- log --- */
+#log-container {
+  background: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 6px;
+  padding: 0.75rem;
+  max-height: 200px;
+  overflow-y: auto;
+}
+#log-container h3 { font-size: 0.8rem; color: #71717a; margin-bottom: 0.4rem; }
+#log {
+  font-size: 0.7rem;
+  line-height: 1.5;
+  color: #a1a1aa;
+}
+.log-jam    { color: #f43f5e; }
+.log-route  { color: #f59e0b; }
+.log-swap   { color: #22d3ee; }
+.log-done   { color: #10b981; }

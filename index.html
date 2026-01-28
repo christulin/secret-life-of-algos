@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secret Life of Algos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Secret Life of Algorithms</h1>
+    <p class="subtitle">Emergent behavior in sorting — inspired by Michael Levin</p>
+  </header>
+
+  <div id="controls">
+    <button id="btn-reset">New Array</button>
+    <button id="btn-run">Run</button>
+    <button id="btn-step">Step</button>
+    <button id="btn-pause">Pause</button>
+    <label>
+      Speed
+      <input type="range" id="speed" min="1" max="100" value="50">
+    </label>
+    <label>
+      Elements
+      <input type="number" id="count" min="4" max="60" value="20">
+    </label>
+    <label>
+      Stubbornness
+      <input type="range" id="stubbornness" min="0" max="100" value="30">
+      <span id="stubbornness-val">30%</span>
+    </label>
+  </div>
+
+  <div id="arena"></div>
+
+  <div id="stats">
+    <div class="stat">Step: <span id="stat-step">0</span></div>
+    <div class="stat">Swaps: <span id="stat-swaps">0</span></div>
+    <div class="stat">Jams: <span id="stat-jams">0</span></div>
+    <div class="stat">Reroutes: <span id="stat-reroutes">0</span></div>
+    <div class="stat">Sorted: <span id="stat-sorted">false</span></div>
+  </div>
+
+  <div id="log-container">
+    <h3>Agent Log</h3>
+    <div id="log"></div>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
