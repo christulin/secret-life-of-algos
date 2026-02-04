@@ -64,20 +64,25 @@ The simulation runs in discrete ticks. Each tick:
 
 ## How to Run
 
-No build step. Plain ES modules served from any static file server.
+### Quick Start (no server needed)
 
 ```bash
-# Option 1: Python
-python3 -m http.server 8000
-
-# Option 2: Node (npx)
-npx serve .
-
-# Option 3: PHP
-php -S localhost:8000
+npm install
+npm run build
 ```
 
-Then open `http://localhost:8000` in your browser.
+Then open `dist/index.html` directly in your browser (double-click it or use File > Open). No local server required.
+
+### Development
+
+For development with hot reload:
+
+```bash
+npm install
+npm run dev
+```
+
+Then open the URL shown in the terminal (usually `http://localhost:5173`).
 
 ## What to Observe
 
@@ -124,7 +129,9 @@ index.html       — UI shell and controls
 style.css        — Dark theme, agent state colors
 agent.js         — Agent class: perception, decision, memory
 simulation.js    — Tick loop, swap resolution, statistics
-main.js          — DOM wiring and rendering
+main.js          — DOM wiring and rendering (entry point)
+vite.config.js   — Vite/Rollup build configuration
+dist/            — Built output (open index.html directly in browser)
 ```
 
 ## Further Reading
