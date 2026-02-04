@@ -125,13 +125,14 @@ doesn't necessarily vanish.
 ## Project Structure
 
 ```
-index.html       — UI shell and controls
-style.css        — Dark theme, agent state colors
-agent.js         — Agent class: perception, decision, memory
-simulation.js    — Tick loop, swap resolution, statistics
-main.js          — DOM wiring and rendering (entry point)
-vite.config.js   — Vite/Rollup build configuration
-dist/            — Built output (open index.html directly in browser)
+index.html         — UI shell (Vite entry point)
+vite.config.js     — Vite/Rollup build configuration
+src/
+  main.js          — DOM wiring and rendering (JS entry point)
+  agent.js         — Agent class: perception, decision, memory
+  simulation.js    — Tick loop, swap resolution, statistics
+  style.css        — Dark theme, agent state colors
+dist/              — Built output (open index.html directly in browser)
 ```
 
 ## Further Reading
